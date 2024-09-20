@@ -28,7 +28,7 @@ body {
 .container {
   background-color: #018281; /* Cor de fundo do container */
   width: 100vh; /* 75% da altura da tela */
-  height: 90%;
+  height: 75%;
   display: flex;
   flex-direction: column; /* Coluna principal */
   justify-content: space-between; /* Distribuição uniforme dos elementos */
@@ -83,6 +83,7 @@ body {
 
 .slide {
   display: flex;
+  overflow: hidden;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -90,15 +91,19 @@ body {
   width: 100%;
 }
 
-.content-page{
-  display: grid;
-  grid-gap: 10px;
-  align-items: center;
-  grid-template-columns:
-  [left] 1fr
-  [middle1] 1fr
-  [middle2] 1fr
-  [right];
+@media (max-width: 480px) {
+    .slides {
+        overflow-y: auto; /* Adiciona scroll vertical */
+        overflow-x: hidden; /* Oculta o scroll horizontal */
+        max-height: 80vh; /* Define uma altura máxima para rolagem */
+        -webkit-overflow-scrolling: touch; /* Scroll suave no iOS */
+        scroll-behavior: smooth; /* Scroll suave */
+    }
+
+    .slide {
+        flex: 0 0 auto; /* Impede que os slides se expandam para ocupar todo o espaço */
+        margin-bottom: 10px; /* Espaçamento entre os slides */
+    }
 }
 
 .slide-content {
