@@ -1,0 +1,25 @@
+        <div class="text-box" id="textBox">
+            <div class="Box-Grey-Border" id="movableBox">
+                <div class="Box-Blue-Border">
+                    <img class="icon" src="./Pics/Wlogo.ico" alt="Ícone">
+                    <span class="button-text">Welcome to my Portfolio</span>
+                    <button onclick="hideTextBox()">✖</button>
+                </div>
+                <div class="Box-Grey-Content">
+                    <div class="content-wrapper">
+                        <img src="./Pics/UserProg.ico" alt="Imagem" class="content-image">
+                        <ul class="info-list">
+                            <li>Nome: Seu Nome</li>
+                            <li>Email: seu.email@example.com</li>
+                            <li>Telefone: (99) 99999-9999</li>
+                            <li>Endereço: Rua Sua Rua</li>
+                            <li class="sobre-wrapper">Sobre:
+                                <div class="sobre-content">
+                                    Aqui está o texto sobre você. Esta seção pode conter detalhes adicionais sobre sua experiência, habilidades ou qualquer outra informação relevante.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
