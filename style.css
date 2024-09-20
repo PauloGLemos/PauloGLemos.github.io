@@ -37,6 +37,7 @@ body {
   box-sizing: border-box; /* Incluir borda na largura e altura total */
   aspect-ratio: 4/3; /* Proporção 4:3 */
   overflow: hidden; /* Garantir que o conteúdo siga a forma */
+  position: relative;
 }
 
 .align-slide{
@@ -80,7 +81,6 @@ body {
   font-weight: normal;
 }
 
-
 .slide {
   display: flex;
   overflow: hidden;
@@ -116,7 +116,7 @@ body {
 }
 
 .nav-button {
-  position: absolute;
+  position:absolute;
   top: 50%;
   transform: translateY(-50%);
   background-color: #cccccc;
@@ -376,7 +376,7 @@ footer {
 p {
     font-size: 16px;
     line-height: 1.6;
-    margin: 20px;
+    margin: 30px;
 }
 
 /* Estilo para tablets */
@@ -395,4 +395,3 @@ p {
         line-height: 1.4;
     }
 }
-
