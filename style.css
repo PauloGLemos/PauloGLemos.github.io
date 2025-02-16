@@ -255,7 +255,7 @@ footer {
     border-style: groove;
     grid-template-columns: 1fr 1fr; /* Ajuste para duas colunas */
     gap: 10px;
-    padding: 20px;
+    padding: 5px;
     font-size: 16px;
     list-style: none; /* Remove o marcador de lista padrão */
 }
