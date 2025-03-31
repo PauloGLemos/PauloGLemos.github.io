@@ -23,20 +23,30 @@ body {
   justify-content: center; /* Centralizar na horizontal */
   align-items: center; /* Centralizar na vertical */
   height: 100vh; /* Altura total da tela */
+  font-family: Tahoma, "Trebuchet MS", sans-serif;
+}
+
+.secret{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 10px;
+  font-weight: bolder;
 }
 
 .container {
   background-color: #018281; /* Cor de fundo do container */
   width: 100vh; /* 75% da altura da tela */
-  height: 75%;
+  height: 80%;
+  margin: 10px;
   display: flex;
   flex-direction: column; /* Coluna principal */
-  justify-content: space-between; /* Distribuição uniforme dos elementos */
+  justify-content: center; /* Distribuição uniforme dos elementos */
   align-items: center; /* Centralizar conteúdo na horizontal */
   border: 2px solid #cccccc; /* Borda */
   box-sizing: border-box; /* Incluir borda na largura e altura total */
   aspect-ratio: 4/3; /* Proporção 4:3 */
-  overflow: hidden; /* Garantir que o conteúdo siga a forma */
   position: relative;
 }
 
@@ -67,14 +77,6 @@ body {
   padding-top: 10px; /* Espaçamento da imagem em relação ao topo */
 }
 
-/* Estilos da imagem */
-.content-image {
-  max-width: 50px; /* Tamanho da imagem */
-  height: auto;
-  border: 2px dashed rgba(0, 0, 0, .2);
-  padding: 5px;
-}
-
 /* Estilos dos itens da lista */
 .info-list li {
   background-color: #f5f5f5;
@@ -91,13 +93,18 @@ body {
   width: 100%;
 }
 
-@media (max-width: 480px) {
+.slider{
+  height: 100%;
+}
+
+@media (max-width: 390px) {
     .slides {
         overflow-y: auto; /* Adiciona scroll vertical */
         overflow-x: hidden; /* Oculta o scroll horizontal */
         max-height: 80vh; /* Define uma altura máxima para rolagem */
         -webkit-overflow-scrolling: touch; /* Scroll suave no iOS */
         scroll-behavior: smooth; /* Scroll suave */
+        height: 100%
     }
 
     .slide {
@@ -114,6 +121,35 @@ body {
   align-items: center;
   position: relative;
 }
+
+/* Contêiner dos indicadores */
+.slide-indicators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    position: absolute;
+    bottom: 10px; /* Ajuste a posição conforme necessário */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Estilo dos indicadores (círculos) */
+.indicator {
+    width: 15px;
+    height: 15px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-style:ridge;
+}
+
+/* Indicador ativo */
+.indicator.active {
+    background-color: #333; /* Muda a cor para indicar o slide ativo */
+}
+
 
 .nav-button {
   position:absolute;
@@ -210,6 +246,7 @@ footer {
   display: flex;
   align-items: center;
   height: 20px;
+  overflow: hidden;
 }
 
 .footer-center-text {
@@ -220,6 +257,7 @@ footer {
   margin-left: 2px;
   margin-right: 7px;
   border-style: inset;
+  overflow: hidden;
 }
 
 .footer-text-image {
@@ -243,9 +281,27 @@ footer {
 }
 
 .content-image {
-    max-width: 280px; /* Defina o tamanho máximo desejado */
+    width: 30%; /* Defina o tamanho máximo desejado */
     height: auto;
+    height: auto;
+    border: 2px dashed rgba(0, 0, 0, .2);
+    padding: 5px;
 }
+
+.content-image2 {
+    width: 50%; /* Defina o tamanho máximo desejado */
+    height: auto;
+    height: auto;
+    border: 2px dashed rgba(0, 0, 0, .2);
+    padding: 5px;
+}
+
+  @media (max-width: 480px) {
+     .content-image {
+     width:60%;
+
+     }
+   }
 
 .info-list {
     list-style-type: none;
@@ -255,7 +311,7 @@ footer {
     border-style: groove;
     grid-template-columns: 1fr 1fr; /* Ajuste para duas colunas */
     gap: 10px;
-    padding: 5px;
+    padding: 20px;
     font-size: 16px;
     list-style: none; /* Remove o marcador de lista padrão */
 }
@@ -299,6 +355,8 @@ footer {
     border-style: groove;
     padding: 2px;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .text-grid {
@@ -321,6 +379,18 @@ footer {
   font-size: 15px;
 }
 
+.grid-item1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  margin: 10px;
+  background-color: #f5f5f5;
+  border-style: groove;
+  font-size: 15px;
+}
 .Box-Blue-Border {
   background: linear-gradient(to right, #02005f 0%, #437ea5 80%);
   border-style: none;
@@ -356,6 +426,15 @@ footer {
   margin-right: 5px;
 }
 
+.icon2 {
+  width: 60px;
+  height: auto;
+  margin-left: 20px;
+  border-style: groove;
+  display: flex;
+  background-color: white;
+}
+
 .Box-Blue-Border button:active {
   border-style: inset;
   background-color: #b8b8b8;
@@ -382,16 +461,16 @@ p {
 /* Estilo para tablets */
 @media (max-width: 768px) {
     p {
-        font-size: 14px;
-        margin: 15px;
+        font-size: 16px;
+        margin: 13px;
     }
 }
 
 /* Estilo para celulares */
 @media (max-width: 480px) {
     p {
-        font-size: 12px;
-        margin: 10px;
+        font-size: 16px;
+        margin: 13px;
         line-height: 1.4;
     }
 }
